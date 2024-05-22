@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "sA25HGYEPjTjyKp1l2XOlGbgBBFRSAF+ZjOoeGPFxBE=",
+  "Source": "TeamSync.API",
+  "BasePath": "_content/TeamSync.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
