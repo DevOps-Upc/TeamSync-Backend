@@ -1,5 +1,10 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using TeamSync.API.ManagerProject.Application.Internal.CommandServices;
+using TeamSync.API.ManagerProject.Application.Internal.QueryServices;
+using TeamSync.API.ManagerProject.Domain.Repositories;
+using TeamSync.API.ManagerProject.Domain.Services;
+using TeamSync.API.ManagerProject.Infrastructure.Persistence.Repositories;
 using TeamSync.API.Shared.Domain.Repositories;
 using TeamSync.API.Shared.Infrastructure.Persistence.EFC.Configuration;
 using TeamSync.API.Shared.Infrastructure.Persistence.EFC.Repositories;
@@ -42,9 +47,9 @@ builder.Services.AddSwaggerGen(
         c.SwaggerDoc("v1",
             new OpenApiInfo
             {
-                Title = "DeepOs.TeamSync.Api",
+                Title = "DevOs.TeamSync.Api",
                 Version = "v1",
-                Description = "DeepOs TeamSync Plataform Api",
+                Description = "DevOs TeamSync Plataform Api",
                 TermsOfService = new Uri("https://example.com/terms"),
                 License = new OpenApiLicense
                 {
@@ -55,10 +60,21 @@ builder.Services.AddSwaggerGen(
         c.EnableAnnotations();
     });
 
+// Configure Lowercase URLs
+builder.Services.AddRouting(options => options.LowercaseUrls = true);
+
+
 // Configure Dependency Injection
 // Shared Bounded Context Injection Configuration
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddScoped<IProjectQueryService, ProjectQueryService>();
+builder.Services.AddScoped<IProjectCommandService, ProjectCommandService>();
+builder.Services.AddScoped<IProjectRepository, ProjectRepository>();
+
+builder.Services.AddScoped<IFileAssetCommandService, FileAssetCommandService>();
+builder.Services.AddScoped<IFileRepository, FileRepository>();
+builder.Services.AddScoped<IFileAssetQueryService, FileAssetQueryService>();
 
 var app = builder.Build();
 
