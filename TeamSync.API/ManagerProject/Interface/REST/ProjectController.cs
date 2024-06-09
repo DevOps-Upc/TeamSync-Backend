@@ -54,6 +54,15 @@ public class ProjectController(
         return CreatedAtAction(nameof(GetProjectById), new { projectId = resourceOk.Id }, resourceOk);
     }
 
+    [HttpDelete("{ProjectId}/{ProfileId}")]
+    public async Task<IActionResult> DeleteProject([FromRoute] int ProjectId, int ProfileId)
+    {
+        var deleteProjectByIdAndProfileIdCommand = new DeleteProjectByIdAndProfileIdCommand(ProjectId, ProfileId);
+        var project = await projectCommandService.Handle(deleteProjectByIdAndProfileIdCommand);
+        return Ok(project);
+    }
+    
+
     
     
 }

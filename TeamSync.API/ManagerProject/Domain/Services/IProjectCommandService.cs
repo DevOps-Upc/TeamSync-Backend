@@ -7,5 +7,5 @@ namespace TeamSync.API.ManagerProject.Domain.Services;
 public interface IProjectCommandService
 {
     Task<Project?> Handle(CreateProjectCommand command);
-   
+    Task<Project?> Handle(DeleteProjectByIdAndProfileIdCommand command);
 }

@@ -18,5 +18,13 @@ public class ProjectCommandService(IProjectRepository projectRepository, IUnitOf
         await unitOfWork.CompleteAsync();
         return project;
     }
-    
+
+    public async Task<Project?> Handle(DeleteProjectByIdAndProfileIdCommand command)
+    {
+        var project = await projectRepository.FindByIdAsync(command.projectId);
+        projectRepository.Remove(project);
+        await unitOfWork.CompleteAsync();
+        return project;
+
+    }
 }
