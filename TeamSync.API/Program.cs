@@ -76,6 +76,10 @@ builder.Services.AddScoped<IFileAssetCommandService, FileAssetCommandService>();
 builder.Services.AddScoped<IFileRepository, FileRepository>();
 builder.Services.AddScoped<IFileAssetQueryService, FileAssetQueryService>();
 
+builder.Services.AddScoped<IProfileQueryService, ProfileQueryService>();
+builder.Services.AddScoped<IProfileCommandService, ProfileCommandService>();
+builder.Services.AddScoped<IProfileRepository, ProfileRepository>();
+
 var app = builder.Build();
 
 // Verify Database Objects are created
