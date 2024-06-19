@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Proyectos\\Proyectos Ciclo 6\\TeamSync-Backend\\TeamSync.API\\TeamSync.API.csproj": {}
+    "C:\\Users\\usuario\\RiderProjects\\TeamSync-Backend\\TeamSync.API\\TeamSync.API.csproj": {}
   },
   "projects": {
-    "D:\\Proyectos\\Proyectos Ciclo 6\\TeamSync-Backend\\TeamSync.API\\TeamSync.API.csproj": {
+    "C:\\Users\\usuario\\RiderProjects\\TeamSync-Backend\\TeamSync.API\\TeamSync.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Proyectos\\Proyectos Ciclo 6\\TeamSync-Backend\\TeamSync.API\\TeamSync.API.csproj",
+        "projectUniqueName": "C:\\Users\\usuario\\RiderProjects\\TeamSync-Backend\\TeamSync.API\\TeamSync.API.csproj",
         "projectName": "TeamSync.API",
-        "projectPath": "D:\\Proyectos\\Proyectos Ciclo 6\\TeamSync-Backend\\TeamSync.API\\TeamSync.API.csproj",
-        "packagesPath": "C:\\Users\\braya\\.nuget\\packages\\",
-        "outputPath": "D:\\Proyectos\\Proyectos Ciclo 6\\TeamSync-Backend\\TeamSync.API\\obj\\",
+        "projectPath": "C:\\Users\\usuario\\RiderProjects\\TeamSync-Backend\\TeamSync.API\\TeamSync.API.csproj",
+        "packagesPath": "C:\\Users\\usuario\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\usuario\\RiderProjects\\TeamSync-Backend\\TeamSync.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\braya\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -112,7 +112,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.301/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Users\\usuario\\.dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

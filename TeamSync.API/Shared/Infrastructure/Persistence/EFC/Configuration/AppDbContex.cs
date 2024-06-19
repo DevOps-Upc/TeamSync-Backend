@@ -47,8 +47,24 @@ public class AppDbContext(DbContextOptions options) : DbContext(options)
             .HasForeignKey(f => f.ProjectId)
             .HasPrincipalKey(p => p.Id);
         //=======================================================
-        
-        
+        builder.Entity<profile>().HasKey(p => p.Id);
+        builder.Entity<profile>().Property(p => p.Id)
+            .IsRequired().ValueGeneratedOnAdd();
+        builder.Entity<profile>().Property(p => p.Name)
+            .HasMaxLength(100);
+        builder.Entity<profile>().Property(p => p.Address)
+            .HasMaxLength(100);
+        builder.Entity<profile>().Property(p => p.Picture)
+            .HasColumnType("LONGBLOB");
+        builder.Entity<profile>().Property(p => p.Company)
+            .HasMaxLength(100);
+        builder.Entity<profile>().Property(p => p.Role)
+            .HasMaxLength(100);
+        builder.Entity<profile>().Property(p => p.EmailAddress)
+            .HasMaxLength(100);
+        builder.Entity<profile>().Property(p => p.Membership)
+            .HasMaxLength(100);
+        //=======================================================
         builder.UseSnakeCaseWithPluralizedTableNamingConvention();
         
     }
