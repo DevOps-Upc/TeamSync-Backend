@@ -1,0 +1,6 @@
+@professionals_back_wa_HostAddress = http://localhost:5149
+
+GET {{professionals_back_wa_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

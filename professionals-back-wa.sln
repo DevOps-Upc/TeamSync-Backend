@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "professionals-back-wa", "professionals-back-wa.csproj", "{B37B9622-3A0D-429B-84AB-D5B7105B656E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B37B9622-3A0D-429B-84AB-D5B7105B656E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B37B9622-3A0D-429B-84AB-D5B7105B656E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B37B9622-3A0D-429B-84AB-D5B7105B656E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B37B9622-3A0D-429B-84AB-D5B7105B656E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
