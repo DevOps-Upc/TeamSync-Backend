@@ -46,7 +46,6 @@ builder.Services.AddSwaggerGen(
                 Version = "v1",
                 Description = "DevOs TeamSync Platform API",
                 TermsOfService = new Uri("https://example.com/terms"),
-                
                 License = new OpenApiLicense
                 {
                     Name = "Apache 2.0",
