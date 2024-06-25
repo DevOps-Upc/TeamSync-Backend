@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("professionals-back-wa")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+93613a92ed15efca4d2e0e69eb99450e0a311443")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1bd597b4b9bf61b657f700f757ffc715de4f9860")]
 [assembly: System.Reflection.AssemblyProductAttribute("professionals-back-wa")]
 [assembly: System.Reflection.AssemblyTitleAttribute("professionals-back-wa")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

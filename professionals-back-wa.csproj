@@ -23,14 +23,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Professionals\Application\Internal\CommandServices\" />
-      <Folder Include="Professionals\Application\Internal\QueryServices\" />
       <Folder Include="Professionals\Domain\Model\Entities\" />
-      <Folder Include="Professionals\Domain\Repositories\" />
-      <Folder Include="Professionals\Domain\Services\" />
-      <Folder Include="Professionals\Infraestructure\Persistence\EFC\Repositories\" />
-      <Folder Include="Professionals\Interfaces\REST\Resources\" />
-      <Folder Include="Professionals\Interfaces\REST\Transform\" />
     </ItemGroup>
 
 </Project>
