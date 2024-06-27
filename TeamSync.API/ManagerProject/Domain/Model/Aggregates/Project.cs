@@ -20,4 +20,6 @@ public class Project
     public Project project { get;  }
     public ICollection<FileAsset> Files { get; private set;  } 
     
+    public ICollection<Comment> Comments { get; private set; }
+    
 }

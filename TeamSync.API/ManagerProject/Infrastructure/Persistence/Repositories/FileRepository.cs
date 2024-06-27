@@ -16,7 +16,7 @@ public class FileRepository(AppDbContext context): BaseRepository<FileAsset>(con
     public new async Task<IEnumerable<FileAsset>> FindByIdProject(int projectId)
     {
         return await Context.Set<FileAsset>()
-            .Where(file => file.Id == projectId)
+            .Where(file => file.ProjectId == projectId)
             .ToListAsync();
     }
 }

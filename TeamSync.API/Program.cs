@@ -74,10 +74,10 @@ builder.Services.AddRouting(options => options.LowercaseUrls = true);
 // Shared Bounded Context Injection Configuration
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+
 builder.Services.AddScoped<IProjectQueryService, ProjectQueryService>();
 builder.Services.AddScoped<IProjectCommandService, ProjectCommandService>();
 builder.Services.AddScoped<IProjectRepository, ProjectRepository>();
-
 
 builder.Services.AddScoped<IFileAssetCommandService, FileAssetCommandService>();
 builder.Services.AddScoped<IFileRepository, FileRepository>();
@@ -86,6 +86,10 @@ builder.Services.AddScoped<IFileAssetQueryService, FileAssetQueryService>();
 builder.Services.AddScoped<IProfileQueryService, ProfileQueryService>();
 builder.Services.AddScoped<IProfileCommandService, ProfileCommandService>();
 builder.Services.AddScoped<IProfileRepository, ProfileRepository>();
+
+builder.Services.AddScoped<ICommentQueryService, CommentQueryService>();
+builder.Services.AddScoped<ICommentCommandService, CommentCommandService>();
+builder.Services.AddScoped<ICommentRepository, CommentRepository>();
 
 //Servicios Externos
 builder.Services.AddScoped<ExternalProfileService>();

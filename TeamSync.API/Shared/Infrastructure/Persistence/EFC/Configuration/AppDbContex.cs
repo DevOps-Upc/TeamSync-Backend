@@ -39,7 +39,14 @@ public class AppDbContext(DbContextOptions options) : DbContext(options)
             .HasColumnType("LONGBLOB");
         builder.Entity<FileAsset>().Property(f => f.Type)
             .HasMaxLength(70);
-        
+        //=======================================================
+        builder.Entity<Comment>().HasKey(c => c.Id);
+        builder.Entity<Comment>().Property(c => c.Id)
+            .IsRequired().ValueGeneratedOnAdd();
+        builder.Entity<Comment>().Property(c => c.content)
+            .HasMaxLength(100);
+        builder.Entity<Comment>().Property(c => c.profileId);
+            
         
         //=======================================================
         builder.Entity<Project>()
@@ -47,6 +54,13 @@ public class AppDbContext(DbContextOptions options) : DbContext(options)
             .WithOne(f => f.project)
             .HasForeignKey(f => f.ProjectId)
             .HasPrincipalKey(p => p.Id);
+
+        builder.Entity<Project>()
+            .HasMany(c => c.Comments)
+            .WithOne(c => c.project)
+            .HasForeignKey(c => c.ProjectId)
+            .HasPrincipalKey(p => p.Id);
+        
         //=======================================================
         builder.Entity<profile>().HasKey(p => p.Id);
         builder.Entity<profile>().Property(p => p.Id)

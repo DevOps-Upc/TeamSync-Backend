@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TeamSync.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+923f6875b3f768bb521f54253aa0c3e337784538")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+781f3d04836df7023aaca28e66276464fe834689")]
 [assembly: System.Reflection.AssemblyProductAttribute("TeamSync.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TeamSync.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
