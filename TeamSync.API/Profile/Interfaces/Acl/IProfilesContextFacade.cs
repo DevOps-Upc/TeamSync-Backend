@@ -2,6 +2,6 @@
 
 public interface IProfilesContextFacade
 {
-    Task<int> CreateProfile(string firstname,string lastname, string address, byte[] picture, string role, string emailAddress, string membership);
+    Task<int> CreateProfile(string firstname,string lastname, string address, byte[] picture, int role, string emailAddress, string membership);
     Task<int> FetchProfileId(int id);
 }

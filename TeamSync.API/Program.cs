@@ -1,5 +1,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using TeamSync.API.IAM.Application.Internal.CommandServices;
+using TeamSync.API.IAM.Application.Internal.OutboundServices;
+using TeamSync.API.IAM.Application.Internal.QueryServices;
+using TeamSync.API.IAM.Domain.Repositories;
+using TeamSync.API.IAM.Domain.Services;
+using TeamSync.API.IAM.Infrastructure.Hashing.BCrypt.Services;
+using TeamSync.API.IAM.Infrastructure.Persistence.EFC.Repositories;
+using TeamSync.API.IAM.Infrastructure.Pipeline.Middleware.Extensions;
+using TeamSync.API.IAM.Infrastructure.Tokens.JWT.Configuration;
+using TeamSync.API.IAM.Infrastructure.Tokens.JWT.Services;
+using TeamSync.API.IAM.Interfaces.ACL;
+using TeamSync.API.IAM.Interfaces.ACL.Services;
 using TeamSync.API.ManagerProject.Application.Internal.CommandServices;
 using TeamSync.API.ManagerProject.Application.Internal.OutBoundServices;
 using TeamSync.API.ManagerProject.Application.Internal.QueryServices;
@@ -64,11 +76,42 @@ builder.Services.AddSwaggerGen(
                 }
             });
         c.EnableAnnotations();
+        c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+        {
+            In = ParameterLocation.Header,
+            Description = "Please enter token",
+            Name = "Authorization",
+            Type = SecuritySchemeType.Http,
+            BearerFormat = "JWT",
+            Scheme = "bearer"
+        });
+        c.AddSecurityRequirement(new OpenApiSecurityRequirement
+        {
+            {
+                new OpenApiSecurityScheme
+                {
+                    Reference = new OpenApiReference
+                    {
+                        Id = "Bearer",
+                        Type = ReferenceType.SecurityScheme
+                    }
+                },
+                Array.Empty<string>()
+            }
+        });
     });
 
 // Configure Lowercase URLs
 builder.Services.AddRouting(options => options.LowercaseUrls = true);
 
+// Add CORS Policy
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAllPolicy",
+        policy => policy.AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader());
+});
 
 // Configure Dependency Injection
 // Shared Bounded Context Injection Configuration
@@ -94,6 +137,20 @@ builder.Services.AddScoped<ICommentRepository, CommentRepository>();
 //Servicios Externos
 builder.Services.AddScoped<ExternalProfileService>();
 builder.Services.AddScoped<IProfilesContextFacade, ProfilesContextFacade>();
+builder.Services.AddScoped<ExternalProfileServiceIAM>();
+
+// IAM Bounded Context Injection Configuration
+
+// TokenSettings Configuration
+
+builder.Services.Configure<TokenSettings>(builder.Configuration.GetSection("TokenSettings"));
+
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IUserCommandService, UserCommandService>();
+builder.Services.AddScoped<IUserQueryService, UserQueryService>();
+builder.Services.AddScoped<ITokenService, TokenService>();
+builder.Services.AddScoped<IHashingService, HashingService>();
+builder.Services.AddScoped<IIamContextFacade, IamContextFacade>();
 
 var app = builder.Build();
 
@@ -112,6 +169,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors("AllowAllPolicy");
+
+// Add Authorization Middleware to Pipeline
+app.UseRequestAuthorization();
 
 app.UseHttpsRedirection();
 

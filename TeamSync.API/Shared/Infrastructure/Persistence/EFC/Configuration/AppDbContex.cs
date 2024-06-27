@@ -1,6 +1,7 @@
 ﻿using System.Collections.Immutable;
 using EntityFrameworkCore.CreatedUpdatedDate.Extensions;
 using Microsoft.EntityFrameworkCore;
+using TeamSync.API.IAM.Domain.Model.Aggregates;
 using TeamSync.API.ManagerProject.Domain.Model.Aggregates;
 using TeamSync.API.ManagerProject.Domain.Model.Entities;
 using TeamSync.API.Profile.Domain.Model.Aggregates;
@@ -79,6 +80,14 @@ public class AppDbContext(DbContextOptions options) : DbContext(options)
             .HasMaxLength(100);
         builder.Entity<profile>().Property(p => p.Membership)
             .HasMaxLength(100);
+        
+        // IAM Context
+        
+        builder.Entity<User>().HasKey(u => u.Id);
+        builder.Entity<User>().Property(u => u.Id).IsRequired().ValueGeneratedOnAdd();
+        builder.Entity<User>().Property(u => u.Username).IsRequired();
+        builder.Entity<User>().Property(u => u.PasswordHash).IsRequired();
+        builder.Entity<User>().Property(u => u.ProfileId).IsRequired();
         //=======================================================
         builder.UseSnakeCaseWithPluralizedTableNamingConvention();
         
