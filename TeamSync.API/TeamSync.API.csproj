@@ -25,8 +25,17 @@
     <ItemGroup>
       <Folder Include="ManagerProject\Domain\Model\ValueObjects\" />
       <Folder Include="Profile\Domain\Model\Entities\" />
-      <Folder Include="Profile\Domain\Model\ValueObjects\" />
       <Folder Include="Profile\Domain\Service\" />
+      <Folder Include="RequestExpert\Application\Internal\CommandServices\" />
+      <Folder Include="RequestExpert\Application\Internal\QueryService\" />
+      <Folder Include="RequestExpert\Domain\Model\Aggregates\" />
+      <Folder Include="RequestExpert\Domain\Model\Commands\" />
+      <Folder Include="RequestExpert\Domain\Model\Queries\" />
+      <Folder Include="RequestExpert\Domain\Model\ValueObjects\" />
+      <Folder Include="RequestExpert\Domain\Service\" />
+      <Folder Include="RequestExpert\Infrastructure\Persistence\JPA\" />
+      <Folder Include="RequestExpert\Interfaces\Rest\Resource\" />
+      <Folder Include="RequestExpert\Interfaces\Rest\Transform\" />
     </ItemGroup>
 
 </Project>

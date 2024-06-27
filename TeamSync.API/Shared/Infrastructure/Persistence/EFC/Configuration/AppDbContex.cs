@@ -73,7 +73,7 @@ public class AppDbContext(DbContextOptions options) : DbContext(options)
             .HasColumnType("LONGBLOB");
         builder.Entity<profile>().Property(p => p.FirstName)
             .HasMaxLength(100);
-        builder.Entity<profile>().Property(p => p.Role)
+        builder.Entity<profile>().Property(p => p.RoleId)
             .HasMaxLength(100);
         builder.Entity<profile>().Property(p => p.EmailAddress)
             .HasMaxLength(100);

@@ -37,6 +37,11 @@ public class ProfileController(
             pictureBytes = memoryStream.ToArray();
 
         }
+
+        if (resource.role < 1 || resource.role > 2)
+        {
+            return BadRequest(new { message = "Role dont exist" });
+        }
         
         var createProjectCommand = 
             ProfileToProfileCommandFromResourceAssembler.ToCommandFromResource(resource,pictureBytes);

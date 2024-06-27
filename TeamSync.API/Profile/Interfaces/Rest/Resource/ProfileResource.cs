@@ -6,6 +6,6 @@ public record ProfileResource(
     string lastname,
     string address, 
     byte[] picture, 
-    string role, 
+    int role, 
     string emailAddress, 
     string membership);

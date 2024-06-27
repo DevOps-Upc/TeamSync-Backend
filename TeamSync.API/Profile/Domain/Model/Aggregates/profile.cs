@@ -1,9 +1,11 @@
-﻿namespace TeamSync.API.Profile.Domain.Model.Aggregates;
+﻿using TeamSync.API.Profile.Domain.Model.ValueObjects;
+
+namespace TeamSync.API.Profile.Domain.Model.Aggregates;
 
 public class profile 
 {
     public profile(){}
-    public profile(string firstname,string lastname, string address, byte[] picture, string role, string emailAddress, string membership)
+    public profile(string firstname,string lastname, string address, byte[] picture, int roleid, string emailAddress, string membership)
     {
         //id ya esta incluido
         FirstName = firstname;
@@ -11,7 +13,7 @@ public class profile
         Address = address; 
         Picture = picture; // foto de perfil
         
-        Role = role;
+        RoleId = (ERole)roleid;
         EmailAddress = emailAddress;
         Membership = membership;
     }
@@ -24,7 +26,7 @@ public class profile
     public string Address { get; private set; }
     public byte[] Picture { get; private set; }
     
-    public string Role { get; private set; }
+    public ERole RoleId { get; private set; }
     public string EmailAddress { get; private set; }
     public string Membership { get; private set; }
     

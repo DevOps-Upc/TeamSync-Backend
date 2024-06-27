@@ -9,7 +9,7 @@ public static class ProfileResourceFromEntityAssembler
     public static ProfileResource ToResourceFromEntity(profile profile)
     {
         return new ProfileResource(profile.Id, profile.FirstName,profile.LastName, profile.Address,profile.Picture 
-            ,profile.Role, profile.EmailAddress, profile.Membership);
+            ,(int)profile.RoleId, profile.EmailAddress, profile.Membership);
     }
  
 }
