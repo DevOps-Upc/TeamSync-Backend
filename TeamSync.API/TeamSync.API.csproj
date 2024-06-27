@@ -24,6 +24,9 @@
 
     <ItemGroup>
       <Folder Include="ManagerProject\Domain\Model\ValueObjects\" />
+      <Folder Include="Profile\Domain\Model\Entities\" />
+      <Folder Include="Profile\Domain\Model\ValueObjects\" />
+      <Folder Include="Profile\Domain\Service\" />
     </ItemGroup>
 
 </Project>

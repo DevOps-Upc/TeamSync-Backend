@@ -11,4 +11,6 @@ public class FileAssetQueryService(IFileRepository fileRepository):IFileAssetQue
     {
         return await fileRepository.FindByIdProject(query.projectId);
     }
+
+  
 }

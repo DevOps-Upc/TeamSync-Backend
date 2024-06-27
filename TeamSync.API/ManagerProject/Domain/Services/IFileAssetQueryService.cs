@@ -6,4 +6,5 @@ namespace TeamSync.API.ManagerProject.Domain.Services;
 public interface IFileAssetQueryService
 {
     Task<IEnumerable<FileAsset>> Handle(GetAllFilesByIdProjectQuery query);
+    
 }

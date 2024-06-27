@@ -1,10 +1,16 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using TeamSync.API.ManagerProject.Application.Internal.CommandServices;
+using TeamSync.API.ManagerProject.Application.Internal.OutBoundServices;
 using TeamSync.API.ManagerProject.Application.Internal.QueryServices;
 using TeamSync.API.ManagerProject.Domain.Repositories;
 using TeamSync.API.ManagerProject.Domain.Services;
 using TeamSync.API.ManagerProject.Infrastructure.Persistence.Repositories;
+using TeamSync.API.Profile.Application.Internal.CommandServices;
+using TeamSync.API.Profile.Application.Internal.QueryService;
+using TeamSync.API.Profile.Infrastructure.Persistence.Repositories;
+using TeamSync.API.Profile.Interfaces.Acl;
+using TeamSync.API.Profile.Interfaces.Acl.Services;
 using TeamSync.API.Shared.Domain.Repositories;
 using TeamSync.API.Shared.Infrastructure.Persistence.EFC.Configuration;
 using TeamSync.API.Shared.Infrastructure.Persistence.EFC.Repositories;
@@ -72,6 +78,7 @@ builder.Services.AddScoped<IProjectQueryService, ProjectQueryService>();
 builder.Services.AddScoped<IProjectCommandService, ProjectCommandService>();
 builder.Services.AddScoped<IProjectRepository, ProjectRepository>();
 
+
 builder.Services.AddScoped<IFileAssetCommandService, FileAssetCommandService>();
 builder.Services.AddScoped<IFileRepository, FileRepository>();
 builder.Services.AddScoped<IFileAssetQueryService, FileAssetQueryService>();
@@ -79,6 +86,10 @@ builder.Services.AddScoped<IFileAssetQueryService, FileAssetQueryService>();
 builder.Services.AddScoped<IProfileQueryService, ProfileQueryService>();
 builder.Services.AddScoped<IProfileCommandService, ProfileCommandService>();
 builder.Services.AddScoped<IProfileRepository, ProfileRepository>();
+
+//Servicios Externos
+builder.Services.AddScoped<ExternalProfileService>();
+builder.Services.AddScoped<IProfilesContextFacade, ProfilesContextFacade>();
 
 var app = builder.Build();
 

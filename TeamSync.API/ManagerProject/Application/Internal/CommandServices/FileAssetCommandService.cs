@@ -15,7 +15,7 @@ public class FileAssetCommandService
 {
     public async Task<FileAsset?> Handle(AddNewFileToProjectCommand command)
     {
-        if (command.datafile is null || command.datafile.Length == 0) throw new Exception("The file is null or empty");
+        //if (command.datafile is null ) throw new Exception("The file is null or empty");
 
         var project = await projectRepository.FindByIdAsync(command._projectId);
         if (project is null) throw new Exception("The project dont exist ");
@@ -30,11 +30,6 @@ public class FileAssetCommandService
         return fileAsset;
         
         
-        /*
-        var project = new Project(command.name,command.picture,command.profileId);
-        //Añadir el repositorio de perfil y igualar el valor de la busqueda
-        await projectRepository.AddAsync(project);
-        await unitOfWork.CompleteAsync();
-        return project;*/
+       
     }
 }

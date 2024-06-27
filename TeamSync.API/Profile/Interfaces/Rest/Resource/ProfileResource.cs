@@ -1,11 +1,11 @@
-﻿namespace TeamSync.API.ManagerProject.Interface.REST.Resources;
+﻿namespace TeamSync.API.Profile.Interfaces.Rest.Resource;
 
 public record ProfileResource(
     int Id ,
-    string name, 
+    string firstname,
+    string lastname,
     string address, 
     byte[] picture, 
-    string company, 
     string role, 
     string emailAddress, 
     string membership);

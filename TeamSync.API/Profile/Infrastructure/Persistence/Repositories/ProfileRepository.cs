@@ -1,10 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using TeamSync.API.ManagerProject.Domain.Model.Aggregates;
 using TeamSync.API.ManagerProject.Domain.Repositories;
+using TeamSync.API.Profile.Domain.Model.Aggregates;
 using TeamSync.API.Shared.Infrastructure.Persistence.EFC.Configuration;
 using TeamSync.API.Shared.Infrastructure.Persistence.EFC.Repositories;
 
-namespace TeamSync.API.ManagerProject.Infrastructure.Persistence.Repositories;
+namespace TeamSync.API.Profile.Infrastructure.Persistence.Repositories;
 
 public class ProfileRepository(AppDbContext context) : BaseRepository<profile>(context), IProfileRepository
 {

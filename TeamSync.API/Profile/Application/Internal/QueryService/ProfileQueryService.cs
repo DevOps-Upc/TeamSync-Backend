@@ -2,8 +2,10 @@
 using TeamSync.API.ManagerProject.Domain.Model.Queries;
 using TeamSync.API.ManagerProject.Domain.Repositories;
 using TeamSync.API.ManagerProject.Domain.Services;
+using TeamSync.API.Profile.Domain.Model.Aggregates;
+using TeamSync.API.Profile.Domain.Model.Queries;
 
-namespace TeamSync.API.ManagerProject.Application.Internal.QueryServices
+namespace TeamSync.API.Profile.Application.Internal.QueryService
 {
     public class ProfileQueryService : IProfileQueryService
     {

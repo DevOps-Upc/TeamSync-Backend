@@ -3,6 +3,7 @@ using EntityFrameworkCore.CreatedUpdatedDate.Extensions;
 using Microsoft.EntityFrameworkCore;
 using TeamSync.API.ManagerProject.Domain.Model.Aggregates;
 using TeamSync.API.ManagerProject.Domain.Model.Entities;
+using TeamSync.API.Profile.Domain.Model.Aggregates;
 using TeamSync.API.Shared.Infrastructure.Persistence.EFC.Configuration.Extensions;
 
 
@@ -50,13 +51,13 @@ public class AppDbContext(DbContextOptions options) : DbContext(options)
         builder.Entity<profile>().HasKey(p => p.Id);
         builder.Entity<profile>().Property(p => p.Id)
             .IsRequired().ValueGeneratedOnAdd();
-        builder.Entity<profile>().Property(p => p.Name)
+        builder.Entity<profile>().Property(p => p.LastName)
             .HasMaxLength(100);
         builder.Entity<profile>().Property(p => p.Address)
             .HasMaxLength(100);
         builder.Entity<profile>().Property(p => p.Picture)
             .HasColumnType("LONGBLOB");
-        builder.Entity<profile>().Property(p => p.Company)
+        builder.Entity<profile>().Property(p => p.FirstName)
             .HasMaxLength(100);
         builder.Entity<profile>().Property(p => p.Role)
             .HasMaxLength(100);
